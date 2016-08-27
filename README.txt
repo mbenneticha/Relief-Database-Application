@@ -1,3 +1,8 @@
+Xtreme Programming project completed within 3 weeks  with a team of 5.
+Utilized web development, Node.js, Javascript, SQL, AJAX, JSON, among others.
+
+Vision: A website/organization that provides a single site that provides informtation about areas around the world in need of relief as well as a method for people to donate toward the nations in need. The website should allow purchases for aid items to be sent to the nation in need as well as donations toward a larger item the nation may need.
+
 HOW TO SETUP:
 
 1. Pull or clone the repo locally. https://github.com/wattsjo/CS361_TMW
