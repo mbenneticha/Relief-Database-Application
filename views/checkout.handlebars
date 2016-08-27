@@ -1,0 +1,82 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">TMW </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                </ul>
+                <ul class ="nav navbar-nav" style="float: right;">
+                    <li >
+                        <a href="/cart">Cart</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+    <form action="???" method="post" class="form-inline">
+    <fieldset class="form-group">
+        <legend>Enter Payment Information</legend>
+        <label margin-left="5px">First Name:
+            <input type="text" name="f_name" size="30" maxlength="100" class="form-control">
+        </label>
+        <br/>
+        <label>Last Name:
+            <input type="text" name="l_name" size="30" maxlength="100" class="form-control">
+        </label>
+        <br/>
+        <label>Email:
+            <input type="text" name="email" size="30" maxlength="100" class="form-control">
+        </label>
+        <br/>
+        <label>Credit Card Number:
+            <input type="number" name="card_number" size="30" maxlength="16" class="form-control">
+        </label>
+        <br/>
+        <label>CVV Number:
+            <input type="number" name="cvv_number" size="5" maxlength="5" class="form-control">
+        </label>
+        <br/>
+    </fieldset>
+    
+    <br>
+    <br>
+
+
+    <fieldset class="form-group">
+        <legend>Billing Information</legend>
+        <label>Address
+            <input type="text" name="address" size="30" maxlength="100" class="form-control">
+        </label>
+        <br/>
+        <label>State
+            <input type="text" name="state" size="30" maxlength="100" class="form-control">
+        </label>
+        <br/>
+        <label>Zip Code
+            <input type="number" name="zip_code" size="10" maxlength="10" class="form-control">
+        </label>
+        <br/>
+        <!--Submit Button-->
+        <button type="button" class="btn btn-success" onclick="location.href='/confirm'">Submit and Pay</button>
+
+        <!--<input type="submit" value="Submit and Pay" color:green>-->
+    </fieldset>
+    </form>
+</div>

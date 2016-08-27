@@ -1,0 +1,40 @@
+CREATE TABLE product (id BIGINT PRIMARY KEY, name VARCHAR(255), 
+description TEXT, price FLOAT, qty_on_hand INT);
+
+CREATE TABLE location (id BIGINT PRIMARY KEY, name VARCHAR(255), 
+description TEXT);
+
+CREATE TABLE customer (id BIGINT PRIMARY KEY, name VARCHAR(255), 
+address VARCHAR(255), phone VARCHAR(255), email VARCHAR(255));
+
+CREATE TABLE cart_status (id SMALLINT PRIMARY KEY, 
+name VARCHAR(255));
+
+CREATE TABLE shipment_status (id SMALLINT PRIMARY KEY, 
+name VARCHAR(255));
+
+CREATE TABLE product_location (product_id BIGINT, 
+FOREIGN KEY (product_id) REFERENCES product(id) 
+ON UPDATE CASCADE ON DELETE CASCADE, 
+location_id BIGINT, FOREIGN KEY (location_id) REFERENCES location(id) 
+ON UPDATE CASCADE ON DELETE CASCADE);
+
+CREATE TABLE cart (id BIGINT PRIMARY KEY, customer_id BIGINT, 
+FOREIGN KEY (customer_id) REFERENCES customer(id) ON UPDATE CASCADE 
+ON DELETE RESTRICT, cart_status_id SMALLINT, 
+FOREIGN KEY (cart_status_id) REFERENCES cart_status(id) 
+ON UPDATE CASCADE ON DELETE SET NULL);
+
+CREATE TABLE cart_contents (cart_id BIGINT, FOREIGN KEY (cart_id)
+REFERENCES cart(id) ON UPDATE CASCADE ON DELETE CASCADE, 
+product_id BIGINT, FOREIGN KEY (product_id) REFERENCES product(id) 
+ON UPDATE CASCADE ON DELETE RESTRICT, product_qty INT);
+
+CREATE TABLE shipment (id BIGINT PRIMARY KEY, cart_id BIGINT, 
+FOREIGN KEY (cart_id) REFERENCES cart(id) 
+ON UPDATE CASCADE ON DELETE RESTRICT, 
+location_id BIGINT, FOREIGN KEY (location_id) REFERENCES location(id) 
+ON UPDATE CASCADE ON DELETE RESTRICT,
+shipment_status_id SMALLINT, FOREIGN KEY (shipment_status_id) 
+REFERENCES shipment_status(id) 
+ON UPDATE CASCADE ON DELETE SET NULL);

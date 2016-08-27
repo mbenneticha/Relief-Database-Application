@@ -1,0 +1,9 @@
+product - Lists products that can be purchased for donation
+location - Lists locations where products may be donated (e.g., countries)
+customer - Lists customers who buy products for donation to others in need
+cart_status - Enumerates the status of a "cart", or collection of products; e.g., "Waiting to check out", "checked out"
+shipment_status - Enumerates the status of a shipment of products; e.g., "En route", "Delivered"
+product_location - Relates products to the locations where they may be donated
+cart - A collection of products; the products stored in a cart are given in the "cart_contents" table
+cart_contents - Relates carts to products that they contain
+shipment - Lists shipments of carts to locations, along with shipment status
